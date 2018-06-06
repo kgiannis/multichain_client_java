@@ -104,7 +104,7 @@ You can also see how you can print the result:
 ```
 response_info.toString(GetInfo.class);
 ```
-Method **_toString()_** maps to:
+Method **_toString(GetInfo.class)_** maps to:
 ```
 public void toString(Class<? extends Annotation> clazz)
 ```
