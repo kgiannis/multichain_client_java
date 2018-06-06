@@ -71,6 +71,9 @@ public class MultichainUtils {
 	 * @param clazz the annotation class
 	 */
 	public static void printList(List<ObjResp> objs, Class<? extends Annotation> clazz){
+		if( objs == null ){
+			return;
+		}
 		objs.forEach(i -> i.toString(clazz));
 	}
 }
