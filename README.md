@@ -91,6 +91,28 @@ chainService.getStringResponse(jsonInString)
 ### Example 2 - No Parameters, Response as Object of type ObjResp ###
 This example is same as example 1 but in this case you are calling method _getObjectResponse_ and we are getting response as object of type ObjResp. An API method to demonstrate it is the **'getinfo'** method.
 
+As you can see at App.java we are extracting the response:
+```
+ObjResp response_info = example.getObjectResponseNoParams();
+```
+Here the object **response_info** carries all the properties of the getinfo method.
+So if you want to get the version of the chain you can get it with:
+```
+response_info.getVersion();
+```
+You can also see how you can print the result:
+```
+response_info.toString(GetInfo.class);
+```
+Method **_toString()_** maps to:
+```
+public void toString(Class<? extends Annotation> clazz)
+```
+inside ObjResp class. 
+Since we have already tag all the properties inside ObjResp class it is easy to get them by searching for the annotation we are passing.
+So **GetInfo.class** here will look only for those properties that have the **@GetInfo** annotation and will return them so we can print them.
+
+
 ### Example 3 - No Parameters, Response as List of objects of type ObjResp ###
 Same as previous examples but this time we are calling method _getObjectListResponse_ and we are expecting to get a list of objects of type ObjResp. An API method to demonstrate it is the **'liststreams'** method.
 
