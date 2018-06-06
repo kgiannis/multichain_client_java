@@ -59,7 +59,7 @@ public List<ObjResp> getObjectListResponse(String jsonInString)
 ```
 
 ### Example 1 - No Parameters, Response as String ###
-In this example we are passing no parameters and we are expecting the response as String. An API method to use here to demonstrate it is the 'help' method. What we are doing here is the equivalent to:
+In this example we are passing no parameters and we are expecting the response as String. An API method to use here to demonstrate it is the **'help'** method. What we are doing here is the equivalent to:
 ```
 {"method":"help","params":[],"id":1,"chain_name":"chain0"}
 ```
@@ -89,13 +89,13 @@ chainService.getStringResponse(jsonInString)
 ```
 
 ### Example 2 - No Parameters, Response as Object of type ObjResp ###
-This example is same as example 1 but in this case you are calling method _getObjectResponse_ and we are getting response as object of type ObjResp. An API method to demonstrate it is the 'getinfo' method.
+This example is same as example 1 but in this case you are calling method _getObjectResponse_ and we are getting response as object of type ObjResp. An API method to demonstrate it is the **'getinfo'** method.
 
 ### Example 3 - No Parameters, Response as List of objects of type ObjResp ###
-Same as previous examples but this time we are calling method _getObjectListResponse_ and we are expecting to get a list of objects of type ObjResp. An API method to demonstrate it is the 'liststreams' method.
+Same as previous examples but this time we are calling method _getObjectListResponse_ and we are expecting to get a list of objects of type ObjResp. An API method to demonstrate it is the **'liststreams'** method.
 
 ### Example 4 - With Parameters, Response as String ###
-In this example we are passing an ArrayList with all the necessary parameters for the API call. An API method to demonstrate is is the 'create' method which creates a stream and returns a HASH code upon successful completion.  
+In this example we are passing an ArrayList with all the necessary parameters for the API call. An API method to demonstrate is is the **'create'** method which creates a stream and returns a HASH code upon successful completion.  
 
 First create the parameters you need for the API call and add them to the ArrayList
 ```
