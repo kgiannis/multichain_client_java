@@ -4,11 +4,11 @@ A Multichain client for JAVA. Tested on Multichain version 1.0.4 with protocol v
 ## Getting Started
 This client is provided with four examples so you can see it in action and test the different responses you get when you make an API call.
 
-We are using only one object for every response we are expecting from the API call. 
-Since each call respond carries its own properties we are expecting to have many properties inside this object in order to cover all the responses.
+We are using only one object type **(ObjResp)** for every response we are expecting from the API call. 
+Since each response carries its own properties we are expecting to have many properties inside this object in order to cover all the possible responses from different calls.
 That concludes (in case we are getting Object and not String as response) with an object with many NULL values in its properties. 
 Only the properties that corresponds to the API response are populated with values.
-So as an example when we are calling API method **getinfo** we are expecting to have values for properties as _version_, _protocolversion_ and so on.
+So, as an example, when we are calling API method **getinfo** we are expecting to have values for properties as _version_, _protocolversion_ and so on.
 
 As you can see in **App.java** you have to follow the steps bellow:
 
@@ -47,7 +47,7 @@ MultichainService class is responsible for the interaction with the chain. Insid
 this.rpc = RpcClient.create(chain);
 ```
 
-and also we have the methods to call the API: 
+and also there you can find the methods to call the API: 
 ```
 public String apiCall(List<Object> params, String method, String chainName)
 ```
@@ -59,7 +59,7 @@ public List<ObjResp> getObjectListResponse(String jsonInString)
 ```
 
 ### Example 1 - No Parameters, Response as String ###
-In this example we are passing no parameters and we are expecting the response as String. An API method to use here to demonstrate it is the **'help'** method. What we are doing here is the equivalent to:
+In this example we are passing no parameters and we are expecting the response as String. An API method to use here for demonstration is the **'help'** method. What we are doing here is the equivalent to:
 ```
 {"method":"help","params":[],"id":1,"chain_name":"chain0"}
 ```
@@ -109,15 +109,15 @@ Method **_toString(GetInfo.class)_** maps to:
 public void toString(Class<? extends Annotation> clazz)
 ```
 inside ObjResp class. 
-Since we have already tag all the properties inside ObjResp class it is easy to get them by searching for the annotation we are passing.
+Since we have already tag all the properties inside ObjResp class with our custom annotations it is easy to get those properties by searching for the annotation class we are passing as parameter.
 So **GetInfo.class** here will look only for those properties that have the **@GetInfo** annotation and will return them so we can print them.
 
 
 ### Example 3 - No Parameters, Response as List of objects of type ObjResp ###
-Same as previous examples but this time we are calling method _getObjectListResponse_ and we are expecting to get a list of objects of type ObjResp. An API method to demonstrate it is the **'liststreams'** method.
+Same as previous examples but this time we are calling method _getObjectListResponse_ and we are expecting to get a list of objects of type ObjResp. An API method to demonstrate it is the **'liststreams'** method. The response will be of type List<ObjResp>.
 
 ### Example 4 - With Parameters, Response as String ###
-In this example we are passing an ArrayList with all the necessary parameters for the API call. An API method to demonstrate is is the **'create'** method which creates a stream and returns a HASH code upon successful completion.  
+In this example we are passing an ArrayList with all the necessary parameters for the API call. An API method to demonstrate this functionality is the **'create'** method which creates a stream and returns a HASH code upon successful completion.  
 
 First create the parameters you need for the API call and add them to the ArrayList
 ```
@@ -135,7 +135,7 @@ Here the parameters:
 Then we proceed the same way as Example 1.
 
 # Next Steps #
-So far the streams and the general info api method responses are available at the ObjResp. More properties have to be added in order to cover all the possible responses from the api call.
+So far the streams and the general info api method responses are available at the ObjResp. More properties have to be added in order to support all the possible responses from the api call.
 
 You can find more info on the Multichain platform here:
 https://www.multichain.com/
