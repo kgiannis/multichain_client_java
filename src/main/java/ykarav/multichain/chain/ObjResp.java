@@ -189,10 +189,10 @@ public class ObjResp implements Serializable {
 	private List<String> publisherList;
 	
 	
-	public boolean isSynched() {
+	public Boolean isSynched() {
 		return synched;
 	}
-	public void setSynched(boolean synched) {
+	public void setSynched(Boolean synched) {
 		this.synched = synched;
 	}
 	public String getName() {
@@ -213,10 +213,10 @@ public class ObjResp implements Serializable {
 	public void setStreamref(String streamref) {
 		this.streamref = streamref;
 	}
-	public boolean isOpen() {
+	public Boolean isOpen() {
 		return open;
 	}
-	public void setOpen(boolean open) {
+	public void setOpen(Boolean open) {
 		this.open = open;
 	}
 	public ObjDetails getObjDetails() {
@@ -225,10 +225,10 @@ public class ObjResp implements Serializable {
 	public void setObjDetails(ObjDetails objDetails) {
 		this.objDetails = objDetails;
 	}
-	public boolean isSubscribed() {
+	public Boolean isSubscribed() {
 		return subscribed;
 	}
-	public void setSubscribed(boolean subscribed) {
+	public void setSubscribed(Boolean subscribed) {
 		this.subscribed = subscribed;
 	}
 	public String getItems() {
@@ -423,22 +423,22 @@ public class ObjResp implements Serializable {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public boolean isIsmine() {
+	public Boolean isIsmine() {
 		return ismine;
 	}
-	public void setIsmine(boolean ismine) {
+	public void setIsmine(Boolean ismine) {
 		this.ismine = ismine;
 	}
-	public boolean isIswatchonly() {
+	public Boolean isIswatchonly() {
 		return iswatchonly;
 	}
-	public void setIswatchonly(boolean iswatchonly) {
+	public void setIswatchonly(Boolean iswatchonly) {
 		this.iswatchonly = iswatchonly;
 	}
-	public boolean isIsscript() {
+	public Boolean isIsscript() {
 		return isscript;
 	}
-	public void setIsscript(boolean isscript) {
+	public void setIsscript(Boolean isscript) {
 		this.isscript = isscript;
 	}
 	public String getPubkey() {
@@ -447,10 +447,10 @@ public class ObjResp implements Serializable {
 	public void setPubkey(String pubkey) {
 		this.pubkey = pubkey;
 	}
-	public boolean isIscompressed() {
+	public Boolean isIscompressed() {
 		return iscompressed;
 	}
-	public void setIscompressed(boolean iscompressed) {
+	public void setIscompressed(Boolean iscompressed) {
 		this.iscompressed = iscompressed;
 	}
 	public String getAccount() {
@@ -459,46 +459,46 @@ public class ObjResp implements Serializable {
 	public void setAccount(String account) {
 		this.account = account;
 	}
-	public boolean isRescan() {
+	public Boolean isRescan() {
 		return rescan;
 	}
-	public void setRescan(boolean rescan) {
+	public void setRescan(Boolean rescan) {
 		this.rescan = rescan;
 	}
-	public boolean isTxindex() {
+	public Boolean isTxindex() {
 		return txindex;
 	}
-	public void setTxindex(boolean txindex) {
+	public void setTxindex(Boolean txindex) {
 		this.txindex = txindex;
 	}
-	public int getAutocombineminconf() {
+	public Integer getAutocombineminconf() {
 		return autocombineminconf;
 	}
-	public void setAutocombineminconf(int autocombineminconf) {
+	public void setAutocombineminconf(Integer autocombineminconf) {
 		this.autocombineminconf = autocombineminconf;
 	}
-	public int getAutocombinemininputs() {
+	public Integer getAutocombinemininputs() {
 		return autocombinemininputs;
 	}
-	public void setAutocombinemininputs(int autocombinemininputs) {
+	public void setAutocombinemininputs(Integer autocombinemininputs) {
 		this.autocombinemininputs = autocombinemininputs;
 	}
-	public int getAutocombinemaxinputs() {
+	public Integer getAutocombinemaxinputs() {
 		return autocombinemaxinputs;
 	}
-	public void setAutocombinemaxinputs(int autocombinemaxinputs) {
+	public void setAutocombinemaxinputs(Integer autocombinemaxinputs) {
 		this.autocombinemaxinputs = autocombinemaxinputs;
 	}
-	public int getAutocombinedelay() {
+	public Integer getAutocombinedelay() {
 		return autocombinedelay;
 	}
-	public void setAutocombinedelay(int autocombinedelay) {
+	public void setAutocombinedelay(Integer autocombinedelay) {
 		this.autocombinedelay = autocombinedelay;
 	}
-	public int getAutocombinesuspend() {
+	public Integer getAutocombinesuspend() {
 		return autocombinesuspend;
 	}
-	public void setAutocombinesuspend(int autocombinesuspend) {
+	public void setAutocombinesuspend(Integer autocombinesuspend) {
 		this.autocombinesuspend = autocombinesuspend;
 	}
 	public String getAutosubscribe() {
@@ -525,52 +525,52 @@ public class ObjResp implements Serializable {
 	public void setLockblock(String lockblock) {
 		this.lockblock = lockblock;
 	}
-	public boolean isHideknownopdrops() {
+	public Boolean isHideknownopdrops() {
 		return hideknownopdrops;
 	}
-	public void setHideknownopdrops(boolean hideknownopdrops) {
+	public void setHideknownopdrops(Boolean hideknownopdrops) {
 		this.hideknownopdrops = hideknownopdrops;
 	}
-	public int getMaxshowndata() {
+	public Integer getMaxshowndata() {
 		return maxshowndata;
 	}
-	public void setMaxshowndata(int maxshowndata) {
+	public void setMaxshowndata(Integer maxshowndata) {
 		this.maxshowndata = maxshowndata;
 	}
-	public boolean isMiningrequirespeers() {
+	public Boolean isMiningrequirespeers() {
 		return miningrequirespeers;
 	}
-	public void setMiningrequirespeers(boolean miningrequirespeers) {
+	public void setMiningrequirespeers(Boolean miningrequirespeers) {
 		this.miningrequirespeers = miningrequirespeers;
 	}
-	public double getMineemptyrounds() {
+	public Double getMineemptyrounds() {
 		return mineemptyrounds;
 	}
-	public void setMineemptyrounds(double mineemptyrounds) {
+	public void setMineemptyrounds(Double mineemptyrounds) {
 		this.mineemptyrounds = mineemptyrounds;
 	}
-	public double getMiningturnover() {
+	public Double getMiningturnover() {
 		return miningturnover;
 	}
-	public void setMiningturnover(double miningturnover) {
+	public void setMiningturnover(Double miningturnover) {
 		this.miningturnover = miningturnover;
 	}
-	public int getLockadminminerounds() {
+	public Integer getLockadminminerounds() {
 		return lockadminminerounds;
 	}
-	public void setLockadminminerounds(int lockadminminerounds) {
+	public void setLockadminminerounds(Integer lockadminminerounds) {
 		this.lockadminminerounds = lockadminminerounds;
 	}
-	public boolean isGen() {
+	public Boolean isGen() {
 		return gen;
 	}
-	public void setGen(boolean gen) {
+	public void setGen(Boolean gen) {
 		this.gen = gen;
 	}
-	public int getGenproclimit() {
+	public Integer getGenproclimit() {
 		return genproclimit;
 	}
-	public void setGenproclimit(int genproclimit) {
+	public void setGenproclimit(Integer genproclimit) {
 		this.genproclimit = genproclimit;
 	}
 
