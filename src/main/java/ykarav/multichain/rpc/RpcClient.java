@@ -80,7 +80,7 @@ public class RpcClient {
 			logger.log(
 					Level.SEVERE, 
 					"Code: " + responseJSONObjectError.get("code").toString() + 
-					"\nMessage" + responseJSONObjectError.get("message").toString()
+					"\nMessage: " + responseJSONObjectError.get("message").toString()
 					);
 			// Return object with error code/message
         	return (T) responseJSONObjectError;
