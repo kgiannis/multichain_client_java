@@ -53,6 +53,7 @@ public class ObjResp implements Serializable {
 	@ListStreams
 	private Boolean open;
 	@ListStreams
+	@JsonProperty("details")
 	private ObjDetails objDetails;
 	@ListStreams
 	private Boolean subscribed;
