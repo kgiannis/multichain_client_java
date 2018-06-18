@@ -73,7 +73,7 @@ public class RpcClient {
 		JSONObject responseJSONObject = this.invokeRPC(data);
 		
 		// If result is null then something were wrong
-		if( responseJSONObject.get("result") == null ){
+		if( responseJSONObject.get("result") == null && responseJSONObject.get("error") != null ){
 			
 			// Log error code and message
 			responseJSONObjectError = (JSONObject) responseJSONObject.get("error");
