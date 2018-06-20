@@ -186,8 +186,30 @@ public class ObjResp implements Serializable {
 	@ListStreamKeyItems
 	private String txid;
 	@ListStreamKeyItems
-	@JsonProperty("publishers")
 	private List<String> publisherList;
+	@ListStreamKeyItems
+	private Date blocktimeDate;
+	
+	
+	/**
+	 * Since <publishers> exists as both String type (publishers) and List<String> (publisherList)
+	 * we have to separate each response respectively.
+	 * Command 'liststreams' returns response with json property publishers (String)
+	 * Command 'liststreamkeyitems' returns response with json property publishers (List<String>)
+	 */
+	@JsonSetter("publishers")
+    	public void setPublishersInternal(JsonNode node) {
+		if(node.getNodeType() == JsonNodeType.STRING ){
+			this.publishers = node.asText();
+		}
+		else if(node.getNodeType() == JsonNodeType.ARRAY ){
+			this.publisherList = new ArrayList<String>();
+			for(JsonNode item : node){
+            			String publisher = item.asText();
+            			this.publisherList.add(publisher);
+            		}
+		}
+    	}
 	
 	
 	public Boolean isSynched() {
@@ -573,6 +595,12 @@ public class ObjResp implements Serializable {
 	}
 	public void setGenproclimit(Integer genproclimit) {
 		this.genproclimit = genproclimit;
+	}
+	public String getPublishers() {
+		return publishers;
+	}
+	public List<String> getPublisherList() {
+		return publisherList;
 	}
 
 	
