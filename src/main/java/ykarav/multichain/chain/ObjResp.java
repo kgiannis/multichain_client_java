@@ -272,12 +272,6 @@ public class ObjResp implements Serializable {
 	public void setKeys(String keys) {
 		this.keys = keys;
 	}
-	public String getPublishers() {
-		return publishers;
-	}
-	public void setPublishers(String publishers) {
-		this.publishers = publishers;
-	}
 	public String getVersion() {
 		return version;
 	}
