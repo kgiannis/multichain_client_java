@@ -35,7 +35,7 @@ Inside class Example you can see the four example calls. Each call is different 
 In case of an error (either because you forgot to pass the necessary parameters or passed wrong parameters or even got wrong type as a response) an error message is logged along with its code.
 
 All error codes and messages can be found here:
-https://www.multichain.com/developers/api-errors/
+[https://www.multichain.com/developers/api-errors/](https://www.multichain.com/developers/api-errors/)
 
 We first initialize the MultichainService object with:
 ```
@@ -138,7 +138,7 @@ Then we proceed the same way as Example 1.
 So far the streams and the general info api method responses are available at the ObjResp. More properties have to be added in order to support all the possible responses from the api call.
 
 You can find more info on the Multichain platform here:
-https://www.multichain.com/
+[https://www.multichain.com/](https://www.multichain.com/)
 
 More on the Multichain API here:
-https://www.multichain.com/developers/json-rpc-api/
+[https://www.multichain.com/developers/json-rpc-api/](https://www.multichain.com/developers/json-rpc-api/)
