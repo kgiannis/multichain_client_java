@@ -13,7 +13,7 @@ So, as an example, when we are calling API method **getinfo** we are expecting t
 As you can see in **App.java** you have to follow the steps bellow:
 
 Step 1.: Initialize the Chain properties
-```
+```Java
 Chain chain0 = Chain.initialize("127.0.0.1", 7420, "multichainrpc", "AeU1Z3XtfNwu4BGJiDDciTGn1NgPaogFZ879JBRsVqgD", "chain0");
 ```
 
