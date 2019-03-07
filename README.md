@@ -18,14 +18,14 @@ Chain chain0 = Chain.initialize("127.0.0.1", 7420, "multichainrpc", "AeU1Z3XtfNw
 ```
 
 Method _initialize_ takes five arguments
-```
+```Java
 Chain(ip, port, username, password, chainName)
 ```
 
 ***ip*** is the IP of the node, ***port*** is the PORT of the node, ***username*** and ***password*** can be found in file multichain.conf and ***chainName*** is the name you gave to the chain when you first created it.
 
 Step 2.: Set chain object on Example.forChain() method
-```
+```Java
 Example example = Example.forChain(chain0);
 ```
 
@@ -38,21 +38,21 @@ All error codes and messages can be found here:
 [https://www.multichain.com/developers/api-errors/](https://www.multichain.com/developers/api-errors/)
 
 We first initialize the MultichainService object with:
-```
+```Java
 this.chainService = MultichainService.setChain(chain);
 ```
 
 MultichainService class is responsible for the interaction with the chain. Inside there we are initializing the RPC client
-```
+```Java
 this.rpc = RpcClient.create(chain);
 ```
 
 and also there you can find the methods to call the API: 
-```
+```Java
 public String apiCall(List<Object> params, String method, String chainName)
 ```
 and get responses:
-```
+```Java
 public String getStringResponse(String jsonInString)
 public ObjResp getObjectResponse(String jsonInString)
 public List<ObjResp> getObjectListResponse(String jsonInString)
@@ -60,23 +60,23 @@ public List<ObjResp> getObjectListResponse(String jsonInString)
 
 ### Example 1 - No Parameters, Response as String ###
 In this example we are passing no parameters and we are expecting the response as String. An API method to use here for demonstration is the **'help'** method. What we are doing here is the equivalent to:
-```
+```json
 {"method":"help","params":[],"id":1,"chain_name":"chain0"}
 ```
 in RPC call.
 
 First we are calling:
-```
+```Java
 jsonInString = chainService.apiCall(params, Method.HELP, chain.getChainName());
 ```
 Method _apiCall_ returns the RPC response by first preparing the data and then invoking the RPC.
 
 _Preparing data:_
-```
+```Java
 RpcData rpcPayload = RpcDataUtil.constructCall(params, method, chainName);
 ```
 _Invoking RPC:_
-```
+```Java
 jsonInString = mapper.writeValueAsString( rpc.call(rpcPayload) );
 ```
 Here **rpc.call(rpcPayload)** invokes the RPC and get the response. 
@@ -84,7 +84,7 @@ If the response has any errors those errors are logged at this point.
 If the response has no errors we are making the call to the chain and expect the result. 
 
 The response is then extracted with:
-```
+```Java
 chainService.getStringResponse(jsonInString)
 ```
 
@@ -92,20 +92,20 @@ chainService.getStringResponse(jsonInString)
 This example is same as example 1 but in this case you are calling method _getObjectResponse_ and we are getting response as object of type ObjResp. An API method to demonstrate it is the **'getinfo'** method.
 
 As you can see at App.java we are extracting the response:
-```
+```Java
 ObjResp response_info = example.getObjectResponseNoParams();
 ```
 Here the object **response_info** carries all the properties of the getinfo method.
 So if you want to get the version of the chain you can get it with:
-```
+```Java
 response_info.getVersion();
 ```
 You can also see how you can print the result:
-```
+```Java
 response_info.toString(GetInfo.class);
 ```
 Method **_toString(GetInfo.class)_** maps to:
-```
+```Java
 public void toString(Class<? extends Annotation> clazz)
 ```
 inside ObjResp class. 
@@ -120,7 +120,7 @@ Same as previous examples but this time we are calling method _getObjectListResp
 In this example we are passing an ArrayList with all the necessary parameters for the API call. An API method to demonstrate this functionality is the **'create'** method which creates a stream and returns a HASH code upon successful completion.  
 
 First create the parameters you need for the API call and add them to the ArrayList
-```
+```Java
 Object type = new String("stream");
 Object name = new String("stream100");
 Boolean open = true;
