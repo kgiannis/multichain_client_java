@@ -130,7 +130,7 @@ public class MultichainService {
     	ObjectMapper mapper = new ObjectMapper();
     	List<ObjResp> response = null;
     	try {
-    		response = mapper.readValue(jsonInString, new TypeReference<Collection<ObjResp>>() {});
+    		response = mapper.readValue(jsonInString, new TypeReference<List<ObjResp>>() {});
     		logger.log(Level.INFO, "Multichain API Successfully Responded");
     	} catch (JsonParseException e1) {
 			logger.log(Level.SEVERE, "JsonParseException while trying to get API response.");
